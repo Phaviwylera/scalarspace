@@ -1,0 +1,3 @@
+Scalar Lab V6
+Combined V4 + V5 + V6 upgrade
+Release date: 2026-11-03
