@@ -1,5 +1,13 @@
 # Changelog
 
+## V7 — Exact raw-domain model and local point explorer
+
+- Added an exact comparison of the full unsigned 256-bit integer space `[0, 2^256)` and the valid secp256k1 scalar domain `[1, n)`.
+- Added a browser-local, known-scalar `kG` point explorer with compressed and uncompressed SEC1 encodings.
+- Added curve arithmetic test vectors in JavaScript and a Python unittest suite for scalar-domain, partition, manifest and point arithmetic behavior.
+- Added V6 browser-workspace migration and V7 report/workspace exports.
+- Clarified that the point explorer accepts a supplied scalar only; it does not search for or recover private keys.
+
 ## V6 — Combined V4 + V5 + V6 release
 
 ### V4: Experiment sessions

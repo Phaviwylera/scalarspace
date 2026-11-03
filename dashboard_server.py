@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Serve Scalar Lab V6 on loopback only; standard library, no dependencies."""
+"""Serve Scalar Lab V7 on loopback only; standard library, no dependencies."""
 from __future__ import annotations
 import argparse
 from functools import partial
@@ -25,7 +25,7 @@ class LocalHandler(SimpleHTTPRequestHandler):
 
 
 def main() -> int:
-    parser = argparse.ArgumentParser(description="Run the local Scalar Lab V6 dashboard")
+    parser = argparse.ArgumentParser(description="Run the local Scalar Lab V7 dashboard")
     parser.add_argument("--port", type=int, default=8765, help="preferred local port (default: 8765)")
     parser.add_argument("--no-browser", action="store_true", help="do not open a browser automatically")
     args = parser.parse_args()
@@ -40,7 +40,7 @@ def main() -> int:
         print(f"Port {args.port} is unavailable; selecting a free local port.")
         server = ThreadingHTTPServer(("127.0.0.1", 0), handler)
     url = f"http://127.0.0.1:{server.server_address[1]}/index.html"
-    print("Scalar Lab V6 is running locally.")
+    print("Scalar Lab V7 is running locally.")
     print(f"Open: {url}")
     print("The server listens on 127.0.0.1 only. Press Ctrl+C to stop.")
     if not args.no_browser:
@@ -48,7 +48,7 @@ def main() -> int:
     try:
         server.serve_forever()
     except KeyboardInterrupt:
-        print("\nStopping Scalar Lab V6.")
+        print("\nStopping Scalar Lab V7.")
     finally:
         server.server_close()
     return 0
